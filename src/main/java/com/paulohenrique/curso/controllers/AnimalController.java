@@ -12,11 +12,11 @@ import com.paulohenrique.curso.enrities.Pessoa;
 @RequestMapping(value = "/animais")
 public class AnimalController {
 	
-	@GetMapping
+	/*@GetMapping
 	public ResponseEntity<Animal> BuscarTodos(){
 		Pessoa p = new Pessoa(1L,"Paulo","1234","8888888");
 		Animal a = new Animal(1L, "Cão", "Poodle", p);
 		return ResponseEntity.ok().body(a);
-	}
+	}*/
 
 }
