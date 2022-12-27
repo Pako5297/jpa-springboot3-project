@@ -1,4 +1,4 @@
-package com.paulohenrique.curso.enrities;
+package com.paulohenrique.curso.entities;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -16,7 +16,7 @@ public class Pessoa implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private Long id;
 	private String nome;
 	private String cpf;
 	private String telefone;
@@ -24,9 +24,8 @@ public class Pessoa implements Serializable{
 	public Pessoa() {
 	}
 
-	public Pessoa(long id, String nome, String cpf, String telefone) {
+	public Pessoa(String nome, String cpf, String telefone) {
 		super();
-		this.id = id;
 		this.nome = nome;
 		this.cpf = cpf;
 		this.telefone = telefone;
@@ -63,6 +62,7 @@ public class Pessoa implements Serializable{
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
+
 
 	@Override
 	public int hashCode() {

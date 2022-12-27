@@ -1,11 +1,22 @@
-package com.paulohenrique.curso.enrities;
+package com.paulohenrique.curso.entities;
 
 import java.io.Serializable;
 import java.util.Objects;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "tb_animal")
 public class Animal implements Serializable{
 	private static final long serialVersionUID = 1L;
-	private long id;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	private String especie;
 	private String raca;
 	private Pessoa pessoa;
@@ -13,9 +24,8 @@ public class Animal implements Serializable{
 	public Animal() {
 	}
 
-	public Animal(long id, String especie, String raca, Pessoa pessoa) {
+	public Animal(String especie, String raca, Pessoa pessoa) {
 		super();
-		this.id = id;
 		this.especie = especie;
 		this.raca = raca;
 		this.pessoa = pessoa;
