@@ -31,10 +31,11 @@ public class TestConfig implements CommandLineRunner{
 		Pessoa p5 = new Pessoa("Fred", "9012", "4444444");
 		
 		Animal a1 = new Animal("Cão", "Poodle", p2);
-		Animal a2 = new Animal("Gato", "Vira Lata", p4);
+		Animal a2 = new Animal("Gato", "Vira Lata", p2);
+		Animal a3 = new Animal("Cão", "Vira Lata", p4);
 		
 		pessoaRepository.saveAll(Arrays.asList(p1, p2, p3, p4, p5));
-		animalRepository.saveAll(Arrays.asList(a1, a2));
+		animalRepository.saveAll(Arrays.asList(a1, a2, a3));
 		
 	}
 

@@ -20,7 +20,6 @@ public class PessoaService {
 	}
 	
 	public Pessoa buscarPorId(Long id) {
-		
 		Optional<Pessoa> obj = pessoaRepository.findById(id);
 		return obj.get();
 	}

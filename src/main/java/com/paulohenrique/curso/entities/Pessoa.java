@@ -1,12 +1,17 @@
 package com.paulohenrique.curso.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -20,6 +25,9 @@ public class Pessoa implements Serializable{
 	private String nome;
 	private String cpf;
 	private String telefone;
+	@JsonIgnore
+	@OneToMany(mappedBy = "pessoa")
+	List<Animal> animais = new ArrayList<>();
 	
 	public Pessoa() {
 	}
@@ -63,6 +71,10 @@ public class Pessoa implements Serializable{
 		this.telefone = telefone;
 	}
 
+
+	public List<Animal> getAnimais() {
+		return animais;
+	}
 
 	@Override
 	public int hashCode() {
