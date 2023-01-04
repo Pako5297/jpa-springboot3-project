@@ -31,5 +31,18 @@ public class PessoaService {
 	public void deletar(Long id) {
 		pessoaRepository.deleteById(id);
 	}
+	
+	public Pessoa atualizarPessoa(Long id, Pessoa obj) {
+		Pessoa pessoa = pessoaRepository.getReferenceById(id);
+		updateData(pessoa, obj);
+		return pessoaRepository.save(pessoa);
+	}
+
+	private void updateData(Pessoa pessoa, Pessoa obj) {
+		pessoa.setNome(obj.getNome());
+		pessoa.setCpf(obj.getCpf());
+		pessoa.setTelefone(obj.getTelefone());
+		
+	}
 
 }
