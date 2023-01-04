@@ -23,5 +23,13 @@ public class PessoaService {
 		Optional<Pessoa> obj = pessoaRepository.findById(id);
 		return obj.get();
 	}
+	
+	public Pessoa adicionarPessoa(Pessoa obj) {
+		return pessoaRepository.save(obj);
+	}
+	
+	public void deletar(Long id) {
+		pessoaRepository.deleteById(id);
+	}
 
 }
